@@ -4,9 +4,9 @@ from time import  sleep
 from lcd import LCD
 from screen import Screen
 
-gpio.setup(5, GPIO.IN)
-gpio.setup(6, GPIO.IN)
-gpio.setup(19, GPIO.IN)
+#gpio.setup(5, GPIO.IN)
+#gpio.setup(6, GPIO.IN)
+#gpio.setup(19, GPIO.IN)
 
 run = True
 
