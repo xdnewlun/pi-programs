@@ -6,9 +6,9 @@ from screen import Screen
 
 gpio.setmode(gpio.BCM)
 gpio.setwarnings(False)
-gpio.setup(5, GPIO.IN)
-gpio.setup(6, GPIO.IN)
-gpio.setup(19, GPIO.IN)
+gpio.setup(5, gpio.IN)
+gpio.setup(6, gpio.IN)
+gpio.setup(19, gpio.IN)
 
 run = True
 
