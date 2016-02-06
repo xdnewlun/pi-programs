@@ -27,8 +27,8 @@ lcd = LCD(22,21,17,23,25,24)
 #lcd.send_string('Xander Newlun')
 
 screen = Screen(['poopy', 'is xander'], lcd)
-screen.removeString(0)
 screen.display();
+screen.removeString(0)
 sleep(1);
 screen.addString("gay?")
 screen.display();
