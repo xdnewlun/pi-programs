@@ -29,7 +29,7 @@ lcd = LCD(22,21,17,23,25,24)
 screen = Screen(['poopy', 'is xander'])
 screen.removeString(0)
 screen.addString("gay?")
-screen.display();
+screen.display(lcd);
 
 while run:
     sleep(1)

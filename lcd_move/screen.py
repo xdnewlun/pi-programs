@@ -1,5 +1,3 @@
-from lcd import LCD
-
 class Screen:
 	strings = []
 	index = 0
@@ -25,7 +23,7 @@ class Screen:
 		self.strings.append(string);
 		return
 
-	def display(self):
+	def display(self, lcd):
 		lcd.set_cursor(0,0)
 		lcd.send_string(self.strings[self.index])
 		lcd.set_cursor(1,0)
