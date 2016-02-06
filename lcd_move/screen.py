@@ -1,6 +1,7 @@
 class Screen:
 	strings = []
 	index = 0
+	clear_space = "                "
 
 	def __init__(self, strings, lcd):
 		self.strings = strings
@@ -26,9 +27,9 @@ class Screen:
 
 	def clear(self):
 		self.lcd.set_cursor(0,0)
-		self.lcd.send_string()
+		self.lcd.send_string(self.clear_space)
 		self.lcd.set_cursor(1,0)
-		self.lcd.send_string()
+		self.lcd.send_string(self.clear_space)
 
 	def display(self):
 		self.clear()
