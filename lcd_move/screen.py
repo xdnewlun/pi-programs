@@ -14,7 +14,7 @@ class Screen:
 		return
 
 	def removeString(self, index):
-		del strings[index]
+		del self.strings[index]
 		return
 
 	def insertString(self, index, string):
@@ -36,8 +36,3 @@ class Screen:
 
 		lcd.send_string(self.strings[second])
 		return
-
-screen = new Screen(['poopy', 'is xander'])
-screen.removeString(0)
-screen.addString("gay?")
-screen.display();

@@ -2,6 +2,7 @@ import signal as sig
 import RPi.GPIO as gpio
 from time import  sleep
 from lcd import LCD
+from screen import Screen
 
 gpio.setup(5, GPIO.IN)
 gpio.setup(6, GPIO.IN)
@@ -25,6 +26,10 @@ lcd = LCD(22,21,17,23,25,24)
 #lcd.set_cursor(0,2) # line,column
 #lcd.send_string('Xander Newlun')
 
+screen = Screen(['poopy', 'is xander'])
+screen.removeString(0)
+screen.addString("gay?")
+screen.display();
 
 while run:
     sleep(1)
