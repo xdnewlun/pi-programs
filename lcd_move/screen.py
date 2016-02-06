@@ -24,7 +24,14 @@ class Screen:
 		self.strings.append(string);
 		return
 
+	def clear(self):
+		self.lcd.set_cursor(0,0)
+		self.lcd.send_string()
+		self.lcd.set_cursor(1,0)
+		self.lcd.send_string()
+
 	def display(self):
+		self.clear()
 		self.lcd.set_cursor(0,0)
 		self.lcd.send_string(self.strings[self.index])
 		self.lcd.set_cursor(1,0)
