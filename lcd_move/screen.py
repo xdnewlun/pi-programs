@@ -8,9 +8,17 @@ class Screen:
 		self.lcd = lcd
 
 	def moveDown(self):
+		if(self.index+1 >= len(self.strings)):
+			self.index = 0
+		else:
+			self.index+=1
 		return
 
 	def moveUp(self):
+		if(self.index-1 > 0):
+			self.index = len(self.strings)
+		else
+			self.index-=1
 		return
 
 	def removeString(self, index):

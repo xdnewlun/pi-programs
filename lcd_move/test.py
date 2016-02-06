@@ -4,9 +4,11 @@ from time import  sleep
 from lcd import LCD
 from screen import Screen
 
-#gpio.setup(5, GPIO.IN)
-#gpio.setup(6, GPIO.IN)
-#gpio.setup(19, GPIO.IN)
+gpio.setmode(gpio.BCM)
+gpio.setwarnings(False)
+gpio.setup(5, GPIO.IN)
+gpio.setup(6, GPIO.IN)
+gpio.setup(19, GPIO.IN)
 
 run = True
 
@@ -26,12 +28,16 @@ lcd = LCD(22,21,17,23,25,24)
 #lcd.set_cursor(0,2) # line,column
 #lcd.send_string('Xander Newlun')
 
-screen = Screen(['poopy', 'is xander'], lcd)
+screen = Screen(['Dog', 'Cat', 'Moose', 'Potatoes'], lcd)
 screen.display();
-screen.removeString(0)
-sleep(1);
-screen.addString("gay?")
-screen.display();
+
+while True:
+	if !gpio.input(5):
+		screen.moveDown()
+		screen.display()
+	elif !gpio.input(6):
+		screen.moveUp()
+		screen.display()
 
 while run:
     sleep(1)
