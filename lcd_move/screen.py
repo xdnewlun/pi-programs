@@ -2,8 +2,9 @@ class Screen:
 	strings = []
 	index = 0
 
-	def __init__(self, strings):
+	def __init__(self, strings, lcd):
 		self.strings = strings
+		self.lcd = lcd
 
 	def moveDown(self):
 		return
@@ -23,14 +24,14 @@ class Screen:
 		self.strings.append(string);
 		return
 
-	def display(self, lcd):
-		lcd.set_cursor(0,0)
-		lcd.send_string(self.strings[self.index])
-		lcd.set_cursor(1,0)
+	def display(self):
+		self.lcd.set_cursor(0,0)
+		self.lcd.send_string(self.strings[self.index])
+		self.lcd.set_cursor(1,0)
 		
 		second = self.index+1
 		if(second >= len(self.strings)):
 			second = 0
 
-		lcd.send_string(self.strings[second])
+		self.lcd.send_string(self.strings[second])
 		return

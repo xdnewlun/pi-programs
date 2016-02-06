@@ -26,10 +26,12 @@ lcd = LCD(22,21,17,23,25,24)
 #lcd.set_cursor(0,2) # line,column
 #lcd.send_string('Xander Newlun')
 
-screen = Screen(['poopy', 'is xander'])
+screen = Screen(['poopy', 'is xander'], lcd)
 screen.removeString(0)
+screen.display();
+sleep(1);
 screen.addString("gay?")
-screen.display(lcd);
+screen.display();
 
 while run:
     sleep(1)
