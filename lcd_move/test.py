@@ -32,10 +32,10 @@ screen = Screen(['Dog', 'Cat', 'Moose', 'Potatoes'], lcd)
 screen.display();
 
 while True:
-	if !gpio.input(5):
+	if gpio.input(5) == False:
 		screen.moveDown()
 		screen.display()
-	elif !gpio.input(6):
+	elif gpio.input(6) == False:
 		screen.moveUp()
 		screen.display()
 
