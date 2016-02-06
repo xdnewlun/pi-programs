@@ -31,13 +31,27 @@ lcd = LCD(22,21,17,23,25,24)
 screen = Screen(['Dog', 'Cat', 'Moose', 'Potatoes'], lcd)
 screen.display();
 
+is_press = False
+
 while True:
 	if gpio.input(5) == False:
-		screen.moveDown()
-		screen.display()
+		if is_press == False:
+			screen.moveDown()
+			screen.display()
+			is_press = True
+		else:
+			print('STOP')
+	elif gpio.input(5) == True:
+		is_press = False
 	elif gpio.input(6) == False:
-		screen.moveUp()
-		screen.display()
+		if is_press == False:
+			screen.moveUp()
+			screen.display()
+			is_press = True
+		else:
+			print('STOP')
+	elif gpio.input(6) == True:
+		is_press = False
 
 while run:
     sleep(1)
