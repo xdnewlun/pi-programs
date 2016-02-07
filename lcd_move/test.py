@@ -33,7 +33,7 @@ screen.display();
 
 is_press = False
 
-while True:
+while run:
 	if gpio.input(5) == False:
 		if is_press == False:
 			screen.moveDown()
