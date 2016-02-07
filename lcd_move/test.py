@@ -7,8 +7,7 @@ from screen import Screen
 gpio.setmode(gpio.BCM)
 gpio.setwarnings(False)
 gpio.setup(5, gpio.IN)
-gpio.setup(6, gpio.IN)
-gpio.setup(19, gpio.IN)
+gpio.setup(12, gpio.IN)
 
 run = True
 
@@ -43,7 +42,7 @@ while run:
 			print('STOP')
 	elif gpio.input(5) == True:
 		is_press = False
-	elif gpio.input(6) == False:
+	elif gpio.input(12) == False:
 		if is_press == False:
 			screen.moveUp()
 			screen.display()
